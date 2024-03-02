@@ -1,6 +1,6 @@
 # Qfund. The home for your crypto assets.
 
-> Where is my bitcoin!
+> Where is my Bitcoin?!
 > 
 > I hear often...
 
