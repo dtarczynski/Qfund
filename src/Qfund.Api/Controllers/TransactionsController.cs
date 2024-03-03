@@ -1,6 +1,4 @@
-﻿// Copyright (c) Hitachi Energy. All rights reserved.
-
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Qfund.Application.Transactions.Queries;
 using Wolverine;
 
