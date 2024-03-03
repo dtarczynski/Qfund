@@ -1,6 +1,4 @@
-﻿// Copyright (c) Hitachi Energy. All rights reserved.
-
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using Qfund.Application.Transactions.Queries;
 
 namespace Qfund.Application.Transactions.Handlers;
