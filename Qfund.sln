@@ -10,6 +10,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qfund.Infrastructure", "src
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{09F6F97E-8F03-49D2-A79D-913F453C3E55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qfund.Application.Tests", "Qfund.Application.Tests\Qfund.Application.Tests.csproj", "{A319E8D7-9BBF-4437-A985-170BC4D0D8DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qfund.Domain", "Qfund.Domain\Qfund.Domain.csproj", "{602C2EEF-6C43-4BBB-985D-80871A5ED762}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,5 +36,16 @@ Global
 		{D888E399-AFA5-45B2-A6FB-7E900393FDD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D888E399-AFA5-45B2-A6FB-7E900393FDD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D888E399-AFA5-45B2-A6FB-7E900393FDD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A319E8D7-9BBF-4437-A985-170BC4D0D8DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A319E8D7-9BBF-4437-A985-170BC4D0D8DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A319E8D7-9BBF-4437-A985-170BC4D0D8DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A319E8D7-9BBF-4437-A985-170BC4D0D8DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{602C2EEF-6C43-4BBB-985D-80871A5ED762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{602C2EEF-6C43-4BBB-985D-80871A5ED762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{602C2EEF-6C43-4BBB-985D-80871A5ED762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{602C2EEF-6C43-4BBB-985D-80871A5ED762}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A319E8D7-9BBF-4437-A985-170BC4D0D8DE} = {09F6F97E-8F03-49D2-A79D-913F453C3E55}
 	EndGlobalSection
 EndGlobal
