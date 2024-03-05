@@ -4,15 +4,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qfund.Api", "src\Qfund.Api\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qfund.Application", "src\Qfund.Application\Qfund.Application.csproj", "{23221C03-3743-4DAC-A34F-1710ACFDA1E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qfund.Domain", "src\Qfund.Domain\Qfund.Domain.csproj", "{C097CFC9-9F3B-4747-A89D-95AD170D51DA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qfund.Infrastructure", "src\Qfund.Infrastructure\Qfund.Infrastructure.csproj", "{D888E399-AFA5-45B2-A6FB-7E900393FDD6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{09F6F97E-8F03-49D2-A79D-913F453C3E55}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qfund.Application.Tests", "Qfund.Application.Tests\Qfund.Application.Tests.csproj", "{A319E8D7-9BBF-4437-A985-170BC4D0D8DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qfund.Domain", "Qfund.Domain\Qfund.Domain.csproj", "{602C2EEF-6C43-4BBB-985D-80871A5ED762}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qfund.Domain", "src\Qfund.Domain\Qfund.Domain.csproj", "{7B85361D-3DC6-44DC-83A2-3BD97BD1DA29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,10 +26,6 @@ Global
 		{23221C03-3743-4DAC-A34F-1710ACFDA1E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23221C03-3743-4DAC-A34F-1710ACFDA1E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23221C03-3743-4DAC-A34F-1710ACFDA1E9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C097CFC9-9F3B-4747-A89D-95AD170D51DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C097CFC9-9F3B-4747-A89D-95AD170D51DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C097CFC9-9F3B-4747-A89D-95AD170D51DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C097CFC9-9F3B-4747-A89D-95AD170D51DA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D888E399-AFA5-45B2-A6FB-7E900393FDD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D888E399-AFA5-45B2-A6FB-7E900393FDD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D888E399-AFA5-45B2-A6FB-7E900393FDD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -40,10 +34,10 @@ Global
 		{A319E8D7-9BBF-4437-A985-170BC4D0D8DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A319E8D7-9BBF-4437-A985-170BC4D0D8DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A319E8D7-9BBF-4437-A985-170BC4D0D8DE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{602C2EEF-6C43-4BBB-985D-80871A5ED762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{602C2EEF-6C43-4BBB-985D-80871A5ED762}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{602C2EEF-6C43-4BBB-985D-80871A5ED762}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{602C2EEF-6C43-4BBB-985D-80871A5ED762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B85361D-3DC6-44DC-83A2-3BD97BD1DA29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B85361D-3DC6-44DC-83A2-3BD97BD1DA29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B85361D-3DC6-44DC-83A2-3BD97BD1DA29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B85361D-3DC6-44DC-83A2-3BD97BD1DA29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A319E8D7-9BBF-4437-A985-170BC4D0D8DE} = {09F6F97E-8F03-49D2-A79D-913F453C3E55}
