@@ -1,8 +1,8 @@
 ﻿using Qfund.Domain.Transactions;
 
-namespace Qfund.Domain.Transaction;
+namespace Qfund.Domain.Transaction.Entities;
 
-public record Transaction(
+public record QfundTransaction(
     Guid Id,
     DateTime Date,
     TransactionType Type,
