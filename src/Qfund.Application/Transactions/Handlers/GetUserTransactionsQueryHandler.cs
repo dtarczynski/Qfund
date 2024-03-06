@@ -1,24 +1,24 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Qfund.Application.Common.Interfaces;
+﻿using Qfund.Application.Common.Interfaces;
+using Qfund.Application.Common.Interfaces.Services;
 using Qfund.Application.Transactions.Queries;
-using Qfund.Domain.Transaction;
 using Qfund.Domain.Transaction.Entities;
 
 namespace Qfund.Application.Transactions.Handlers;
 
 public class GetUserTransactionsQueryHandler
 {
-    private readonly IApplicationDbContext _dbContext;
+    private readonly ITransactionsService transactionsService;
 
-    public GetUserTransactionsQueryHandler(IApplicationDbContext dbContext)
+    public GetUserTransactionsQueryHandler(ITransactionsService transactionsService)
     {
-        _dbContext = dbContext;
+        this.transactionsService = transactionsService;
     }
 
-    public async Task<List<QfundTransaction>> Handle(
-        GetUserTransactionsQuery query)
+    public async Task<IEnumerable<QfundTransaction>> Handle(
+        GetUserTransactionsQuery query,
+        CancellationToken cancellationToken)
     {
-        var transactions = await _dbContext.Transactions.ToListAsync();
+        var transactions = await this.transactionsService.GetTransactions(cancellationToken);
 
         return transactions;
     }
