@@ -1,5 +1,6 @@
 using JasperFx.Core;
 using Microsoft.EntityFrameworkCore;
+using Qfund.Api;
 using Qfund.Application.Common.Interfaces;
 using Qfund.Application.Common.Interfaces.Persistence;
 using Qfund.Application.Common.Interfaces.Services;
@@ -23,6 +24,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<Qfund.Infrastructure.Persistence.ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnectionString")));
 
+builder.Services.AddTransient<IStartupFilter, DatabaseInitializer>();
 builder.Services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
 builder.Services.AddTransient<ITransactionsRepository, TransactionsRepository>();
 builder.Services.AddTransient<ITransactionsService, TransactionsService>();

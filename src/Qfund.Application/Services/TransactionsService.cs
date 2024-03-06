@@ -11,4 +11,10 @@ public class TransactionsService(ITransactionsRepository transactionsRepository)
     {
         return await transactionsRepository.GetAll(cancellationToken);
     }
+
+    public void Add(
+        QfundTransaction trans)
+    {
+        transactionsRepository.Add(trans);
+    }
 }
