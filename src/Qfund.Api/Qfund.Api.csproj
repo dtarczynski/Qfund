@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Qfund.Application\Qfund.Application.csproj" />
     <ProjectReference Include="..\Qfund.Infrastructure\Qfund.Infrastructure.csproj" />
+    <ProjectReference Include="..\Qfund.Migrations\Qfund.Migrations.csproj" />
   </ItemGroup>
 
 </Project>
