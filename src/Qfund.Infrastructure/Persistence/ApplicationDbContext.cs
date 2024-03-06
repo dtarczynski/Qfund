@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Qfund.Application.Common.Interfaces;
+using Qfund.Application.Common.Interfaces.Persistence;
 using Qfund.Domain.Transaction.Entities;
 
 namespace Qfund.Infrastructure.Persistence;

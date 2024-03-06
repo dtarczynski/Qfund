@@ -2,7 +2,7 @@
 
 namespace Qfund.Domain.Transaction.Entities;
 
-public record QfundTransaction(
+/* public record QfundTransaction(
     Guid Id,
     DateTime Date,
     TransactionType Type,
@@ -13,7 +13,7 @@ public record QfundTransaction(
     decimal Quantity,
     decimal Price,
     decimal Commission,
-    decimal Value)
+    decimal Value) : BaseEntity<Guid>
 {
     public Guid Id { get; private set; } = Id;
     public DateTime Date { get; private set; } = Date;
@@ -26,4 +26,22 @@ public record QfundTransaction(
     public decimal Price { get; private set; } = Price;
     public decimal Commission { get; private set; } = Commission;
     public decimal Value { get; private set; } = Value;
+}
+*/
+
+public record QfundTransaction : IBaseEntity<Guid>
+{
+    public Guid Id { get; init; }
+    public DateTime Date { get; init; } = DateTime.UtcNow;
+    public decimal Quantity { get; init; }
+
+    public QfundTransaction()
+    {
+        this.Id = Guid.NewGuid();
+    }
+}
+
+public interface IBaseEntity<T>
+{
+    public T Id { get; init; }
 }
