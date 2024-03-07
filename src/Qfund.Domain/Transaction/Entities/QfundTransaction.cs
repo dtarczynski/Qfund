@@ -31,7 +31,7 @@ namespace Qfund.Domain.Transaction.Entities;
 
 public record QfundTransaction : IBaseEntity<Guid>
 {
-    public Guid Id { get; init; }
+    public Guid Id { get; }
     public DateTime Date { get; init; } = DateTime.UtcNow;
     public decimal Quantity { get; init; }
 
@@ -43,5 +43,5 @@ public record QfundTransaction : IBaseEntity<Guid>
 
 public interface IBaseEntity<T>
 {
-    public T Id { get; init; }
+    public T Id { get; }
 }

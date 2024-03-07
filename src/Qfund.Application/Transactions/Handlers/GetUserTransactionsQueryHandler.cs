@@ -1,5 +1,4 @@
-﻿using Qfund.Application.Common.Interfaces;
-using Qfund.Application.Common.Interfaces.Services;
+﻿using Qfund.Application.Common.Interfaces.Services;
 using Qfund.Application.Transactions.Queries;
 using Qfund.Domain.Transaction.Entities;
 
