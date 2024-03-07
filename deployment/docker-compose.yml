@@ -12,7 +12,15 @@ services:
       - '5432:5432'
     volumes:
       - db:/var/lib/postgresql/data
+  rabbit:
+    image: 'rabbitmq'
+    container_name: qfund-queue
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
 
-volumes: 
+
+volumes:
   db:
     driver: local

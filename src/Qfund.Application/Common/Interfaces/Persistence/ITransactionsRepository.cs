@@ -9,4 +9,9 @@ public interface ITransactionsRepository
     Task<bool> Add(
         QfundTransaction trans,
         CancellationToken cancellationToken = default);
+
+    Task<IEnumerable<QfundTransaction>> Get(
+        DateTime queryFrom,
+        DateTime queryTo,
+        CancellationToken cancellationToken = default);
 }

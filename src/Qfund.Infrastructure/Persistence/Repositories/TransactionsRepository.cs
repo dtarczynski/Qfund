@@ -20,4 +20,14 @@ public class TransactionsRepository(ApplicationDbContext applicationDbContext) :
 
         return result > 0;
     }
+
+    public async Task<IEnumerable<QfundTransaction>> Get(
+        DateTime queryFrom,
+        DateTime queryTo,
+        CancellationToken cancellationToken)
+    {
+        return await applicationDbContext.Transactions
+            .Where(x => x.Date >= queryFrom && x.Date <= queryTo)
+            .ToListAsync(cancellationToken);
+    }
 }
