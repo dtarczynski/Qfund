@@ -15,9 +15,9 @@ public class GetUserTransactionsQueryHandler
 
     public async Task<IEnumerable<QfundTransaction>> Handle(
         GetUserTransactionsQuery query,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken = default)
     {
-        var transactions = await this.transactionsService.GetTransactions(cancellationToken);
+        var transactions = await this.transactionsService.GetTransactions(query, cancellationToken);
 
         return transactions;
     }

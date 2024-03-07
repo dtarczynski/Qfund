@@ -22,8 +22,8 @@ public class TransactionsController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult> Get(
-        DateOnly from,
-        DateOnly to)
+        DateTime from,
+        DateTime to)
     {
         if (to < from)
         {

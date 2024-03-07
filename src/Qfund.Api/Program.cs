@@ -7,6 +7,7 @@ using Qfund.Application.Transactions.Handlers;
 using Qfund.Infrastructure.Persistence;
 using Qfund.Infrastructure.Persistence.Repositories;
 using Wolverine;
+using Wolverine.RabbitMQ;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,14 +21,15 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnectionString")));
 
-builder.Services.AddTransient<IStartupFilter, DatabaseInitializer>();
 builder.Services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
+builder.Services.AddTransient<IStartupFilter, DatabaseInitializer>();
 builder.Services.AddTransient<ITransactionsRepository, TransactionsRepository>();
 builder.Services.AddTransient<ITransactionsService, TransactionsService>();
 
 builder.Host.UseWolverine(opts =>
 {
     opts.Discovery.IncludeAssembly(typeof(GetUserTransactionsQueryHandler).Assembly);
+    opts.UseRabbitMq("localhost");
 });
 
 var app = builder.Build();
