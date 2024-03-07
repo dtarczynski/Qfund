@@ -6,7 +6,7 @@ public interface ITransactionsRepository
 {
     Task<IEnumerable<QfundTransaction>> GetAll(CancellationToken cancellationToken);
 
-    void Add(
+    Task<bool> Add(
         QfundTransaction trans,
         CancellationToken cancellationToken = default);
 }

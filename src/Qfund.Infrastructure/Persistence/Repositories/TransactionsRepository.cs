@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Qfund.Application.Common.Interfaces;
 using Qfund.Application.Common.Interfaces.Persistence;
 using Qfund.Domain.Transaction.Entities;
 
@@ -12,11 +11,13 @@ public class TransactionsRepository(ApplicationDbContext applicationDbContext) :
         return await applicationDbContext.Transactions.ToListAsync(cancellationToken: cancellationToken);
     }
 
-    public void Add(
+    public async Task<bool> Add(
         QfundTransaction trans,
         CancellationToken cancellationToken)
     {
         applicationDbContext.Transactions.Add(trans);
-        applicationDbContext.SaveChangesAsync(cancellationToken);
+        var result = await applicationDbContext.SaveChangesAsync(cancellationToken);
+
+        return result > 0;
     }
 }

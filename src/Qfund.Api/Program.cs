@@ -1,7 +1,5 @@
-using JasperFx.Core;
 using Microsoft.EntityFrameworkCore;
 using Qfund.Api;
-using Qfund.Application.Common.Interfaces;
 using Qfund.Application.Common.Interfaces.Persistence;
 using Qfund.Application.Common.Interfaces.Services;
 using Qfund.Application.Services;
@@ -19,9 +17,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnectionString");
-
-builder.Services.AddDbContext<Qfund.Infrastructure.Persistence.ApplicationDbContext>(options =>
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnectionString")));
 
 builder.Services.AddTransient<IStartupFilter, DatabaseInitializer>();
@@ -29,7 +25,10 @@ builder.Services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
 builder.Services.AddTransient<ITransactionsRepository, TransactionsRepository>();
 builder.Services.AddTransient<ITransactionsService, TransactionsService>();
 
-builder.Host.UseWolverine(opts => opts.Discovery.IncludeAssembly(typeof(GetUserTransactionsQueryHandler).Assembly));
+builder.Host.UseWolverine(opts =>
+{
+    opts.Discovery.IncludeAssembly(typeof(GetUserTransactionsQueryHandler).Assembly);
+});
 
 var app = builder.Build();
 

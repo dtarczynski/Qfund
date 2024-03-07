@@ -12,9 +12,9 @@ public class TransactionsService(ITransactionsRepository transactionsRepository)
         return await transactionsRepository.GetAll(cancellationToken);
     }
 
-    public void Add(
+    public Task<bool> Add(
         QfundTransaction trans)
     {
-        transactionsRepository.Add(trans);
+        return transactionsRepository.Add(trans);
     }
 }

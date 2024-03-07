@@ -6,6 +6,6 @@ public interface ITransactionsService
 {
     Task<IEnumerable<QfundTransaction>> GetTransactions(CancellationToken cancellationToken);
 
-    void Add(
+    Task<bool> Add(
         QfundTransaction trans);
 }
