@@ -6,7 +6,7 @@
 ## The main objectives of this project
 
 - 🔭 CleanArchitecture
-- 🤔 SOLID
+- 🤔 Low coupling
 - ⚡ Distributed messaging
 - ⚡ Docker as local stack
 - 💬 Cloud integration
