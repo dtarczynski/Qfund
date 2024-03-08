@@ -1,6 +1,7 @@
 # Qfund transactions tracker
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+![CI](https://github.com/dtarczynski/Qfund/actions/workflows/dotnet.yml/badge.svg)
 
 ## The main objectives of this project
 
