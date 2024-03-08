@@ -7,6 +7,7 @@
 - 🔭 CleanArchitecture
 - 🤔 SOLID
 - ⚡ Distributed messaging
+- ⚡ Docker as local stack
 - 💬 Cloud integration
 
 <!--
