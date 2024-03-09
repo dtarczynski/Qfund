@@ -29,7 +29,16 @@ builder.Services.AddTransient<ITransactionsService, TransactionsService>();
 builder.Host.UseWolverine(opts =>
 {
     opts.Discovery.IncludeAssembly(typeof(GetUserTransactionsQueryHandler).Assembly);
-    opts.UseRabbitMq("localhost");
+    opts.PublishAllMessages().ToRabbitExchange("qfund-api", exchange =>
+    {
+        exchange.ExchangeType = ExchangeType.Direct;
+        exchange.BindQueue("api-queue", "api-binding");
+    });
+    opts.ListenToRabbitQueue("api-queue").UseForReplies();
+    opts.UseRabbitMq(rabbit =>
+    {
+        rabbit.HostName = "localhost";
+    }).AutoProvision();
 });
 
 var app = builder.Build();
