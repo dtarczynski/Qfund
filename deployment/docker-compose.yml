@@ -1,8 +1,8 @@
 version: '3.3'
 services:
   db:
-    image: 'postgres:latest'
-    container_name: qfund-db
+    image: postgres:latest
+    container_name: qfund-postgres
     restart: always
     environment:
       - POSTGRES_USER=postgres
@@ -13,14 +13,21 @@ services:
     volumes:
       - db:/var/lib/postgresql/data
   rabbit:
-    image: 'rabbitmq'
-    container_name: qfund-queue
+    image: rabbitmq:3-management-alpine
+    container_name: qfund-rabbit
     restart: always
     ports:
       - "5672:5672"
       - "15672:15672"
-
-
+    volumes:
+      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq/
+    networks: 
+      - rabbitmq
 volumes:
   db:
     driver: local
+    
+networks:
+  rabbitmq:
+    driver: bridge
