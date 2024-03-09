@@ -11,6 +11,11 @@
 - ⚡ Docker as local stack
 - 💬 Cloud integration
 
+## Powered by
+- Wolverine the Next Generation .NET Mediator and Message Bus
+- Postgresql
+- RabbitMq
+
 <!--
 
 Here are some ideas to get you started:
