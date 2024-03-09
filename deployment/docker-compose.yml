@@ -9,11 +9,11 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=qfund_local
     ports:
-      - '5432:5432'
+      - "5432:5432"
     volumes:
       - db:/var/lib/postgresql/data
   rabbit:
-    image: rabbitmq:3-management-alpine
+    image: rabbitmq:management
     container_name: qfund-rabbit
     restart: always
     ports:
@@ -22,12 +22,12 @@ services:
     volumes:
       - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
       - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq/
-    networks: 
+    networks:
       - rabbitmq
 volumes:
   db:
     driver: local
-    
+
 networks:
   rabbitmq:
     driver: bridge
