@@ -1,5 +1,13 @@
 version: '3.3'
 services:
+  api:
+    image: qfund.api
+    container_name: qfund-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5050:5050"
+      - "5051:5051"
   db:
     image: postgres:latest
     container_name: qfund-postgres
