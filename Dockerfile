@@ -7,7 +7,8 @@ EXPOSE 5050
 EXPOSE 5051
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR /src
+
+WORKDIR /out
 COPY ["src/Qfund.Api/Qfund.Api.csproj", "src/Qfund.Api/"]
 COPY ["src/Qfund.Application/Qfund.Application.csproj", "src/Qfund.Application/"]
 COPY ["src/Qfund.Domain/Qfund.Domain.csproj", "src/Qfund.Domain/"]
@@ -16,7 +17,8 @@ COPY ["src/Qfund.Migrations/Qfund.Migrations.csproj", "src/Qfund.Migrations/"]
 
 RUN dotnet restore "src/Qfund.Api/Qfund.Api.csproj"
 COPY . .
-WORKDIR "/src/src/Qfund.Api"
+
+WORKDIR "/out/src/Qfund.Api"
 RUN dotnet build "Qfund.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
