@@ -37,11 +37,13 @@ builder.Host.UseWolverine(opts =>
     opts.ListenToRabbitQueue("api-queue").UseForReplies();
     opts.UseRabbitMq(rabbit =>
     {
-        rabbit.HostName = "localhost";
+        rabbit.HostName = "qfund-rabbit";
     }).AutoProvision();
 });
 
 var app = builder.Build();
+
+Console.WriteLine($"Environment: {app.Environment.EnvironmentName}");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -55,5 +57,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 app.Run();
