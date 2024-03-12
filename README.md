@@ -11,6 +11,14 @@
 - ⚡ Docker as local stack
 - 💬 Cloud integration
 
+## How to run
+
+From root direectory:
+
+```
+docker compose up
+```
+
 ## Powered by
 - Wolverine the Next Generation .NET Mediator and Message Bus
 - Postgresql
