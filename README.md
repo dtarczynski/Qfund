@@ -19,7 +19,8 @@ From the root directory where `docker-compose.yml` file is located, simply run:
 docker compose up
 ```
 ## DB migrations how to
-TBD
+Database is create and updated from SQL scripts located in `Migrations` project and applied on application startup.
+In order to change or update db write SQL script and start the `Api`. 
 
 ## Powered by
 - Wolverine the Next Generation .NET Mediator and Message Bus
