@@ -22,7 +22,7 @@ public class DatabaseInitializer : IStartupFilter
         EnsureDatabase.For.PostgresqlDatabase(connectionString);
 
         var upgradeBuilder = DeployChanges.To
-            .PostgresqlDatabase(connectionString, "qf")
+            .PostgresqlDatabase(connectionString)
             .WithScriptsEmbeddedInAssembly(typeof(IMigrationMoniker).Assembly)
             .WithTransaction()
             .LogToConsole();
