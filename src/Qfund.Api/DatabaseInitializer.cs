@@ -18,10 +18,11 @@ public class DatabaseInitializer : IStartupFilter
         Action<IApplicationBuilder> next)
     {
         var connectionString = this.configuration.GetConnectionString("DefaultConnectionString");
+        Console.WriteLine($"DbUp ConnectionString {connectionString}");
         EnsureDatabase.For.PostgresqlDatabase(connectionString);
 
         var upgradeBuilder = DeployChanges.To
-            .PostgresqlDatabase(connectionString)
+            .PostgresqlDatabase(connectionString, "qf")
             .WithScriptsEmbeddedInAssembly(typeof(IMigrationMoniker).Assembly)
             .WithTransaction()
             .LogToConsole();
