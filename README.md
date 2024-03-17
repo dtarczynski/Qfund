@@ -19,7 +19,7 @@ From the root directory where `docker-compose.yml` file is located, simply run:
 docker compose up
 ```
 ## DB migrations how to
-Database is created and updated from SQL scripts located in `Migrations` project and applied on application startup.
+Database is created and updated from SQL scripts located in `Qfund.Migrations` project and applied on application startup.
 
 ## Powered by
 - Wolverine the Next Generation .NET Mediator and Message Bus
