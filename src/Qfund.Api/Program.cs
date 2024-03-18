@@ -11,6 +11,12 @@ using Wolverine.RabbitMQ;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var env = builder.Environment;
+builder.Configuration
+    .AddEnvironmentVariables()
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -37,7 +43,7 @@ builder.Host.UseWolverine(opts =>
     opts.ListenToRabbitQueue("api-queue").UseForReplies();
     opts.UseRabbitMq(rabbit =>
     {
-        rabbit.HostName = "qfund-rabbit";
+            rabbit.HostName = builder.Configuration["RabbitMqHost"];
     }).AutoProvision();
 });
 
