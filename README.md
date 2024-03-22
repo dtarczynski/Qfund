@@ -25,3 +25,4 @@ Database is created and updated from SQL scripts located in `Qfund.Migrations` p
 - Wolverine the Next Generation .NET Mediator and Message Bus
 - Postgresql
 - Docker
+- RabbitMq
