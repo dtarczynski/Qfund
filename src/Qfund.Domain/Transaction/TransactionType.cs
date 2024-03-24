@@ -1,4 +1,4 @@
-﻿namespace Qfund.Domain.Transactions;
+﻿namespace Qfund.Domain.Transaction;
 
 public enum TransactionType
 {

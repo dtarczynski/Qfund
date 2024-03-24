@@ -30,8 +30,8 @@ public class TransactionsController : ControllerBase
             return BadRequest();
         }
 
-        await this.messageBus.PublishAsync(new GetUserTransactionsQuery(from, to));
-        return Ok();
+        var transactions = await this.messageBus.InvokeAsync<IEnumerable<QfundTransaction>>(new GetUserTransactionsQuery(from, to));
+        return Ok(transactions);
     }
 
     [HttpPost]

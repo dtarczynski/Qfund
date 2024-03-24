@@ -19,8 +19,8 @@ public class TransactionsTests
         var from = to.AddYears(-1);
         var transactionsList = new List<QfundTransaction>
             {
-                new QfundTransaction() { Date = from.AddDays(1), Quantity = 10 },
-                new QfundTransaction() { Date = from.AddDays(2), Quantity = 100 }
+                new() { Date = from.AddDays(1), Quantity = 10 },
+                new() { Date = from.AddDays(2), Quantity = 100 }
             };
 
         var query = new GetUserTransactionsQuery(from, to);
