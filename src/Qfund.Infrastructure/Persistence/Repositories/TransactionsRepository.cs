@@ -27,7 +27,7 @@ public class TransactionsRepository(ApplicationDbContext applicationDbContext) :
         CancellationToken cancellationToken)
     {
         return await applicationDbContext.Transactions
-            .Where(x => x.Date >= queryFrom && x.Date <= queryTo)
+            .Where(x => x.Date >= queryFrom.ToUniversalTime() && x.Date <= queryTo.ToUniversalTime())
             .ToListAsync(cancellationToken);
     }
 }
