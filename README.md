@@ -1,4 +1,4 @@
-# Qfund transactions tracker
+j# Qfund transactions tracker
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 ![CI](https://github.com/dtarczynski/Qfund/actions/workflows/dotnet.yml/badge.svg)
@@ -16,6 +16,8 @@
 From the root directory where `docker-compose.yml` file is located, simply run:
 
 ```
+
+
 docker compose up
 ```
 ## DB migrations how to
