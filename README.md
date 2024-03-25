@@ -16,8 +16,6 @@ j# Qfund transactions tracker
 From the root directory where `docker-compose.yml` file is located, simply run:
 
 ```
-
-
 docker compose up
 ```
 ## DB migrations how to
